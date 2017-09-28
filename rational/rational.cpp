@@ -32,6 +32,10 @@ Rational& Rational::operator-=(const Rational& rhs) const {
     return Rational(ch*(del / dr) - rhs.ch*(del / rhs.dr), del);
 }
 
+Rational& Rational::operator/=(const Rational rhs) const {
+    return Rational((ch * rhs.dr), (dr * rhs.ch));
+}
+
 //операторы с числами
 
 Rational& Rational::operator+=(const int rhs) const {
@@ -44,4 +48,8 @@ Rational& Rational::operator-=(const int rhs) const {
 
 Rational& Rational::operator*=(const int rhs) const {
     return Rational(ch * rhs, dr);
+}
+
+Rational& Rational::operator/=(const int rhs) const {
+    return Rational(ch, dr * rhs);
 }

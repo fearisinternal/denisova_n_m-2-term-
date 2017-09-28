@@ -23,14 +23,14 @@ struct Rational
     bool operator==(const Rational& a) const;
     bool operator!=(const Rational& a) const;
 
-    Rational& operator+=(const Rational rhs);
-    Rational& operator-=(const Rational rhs);
-    Rational& operator*=(const Rational rhs);
-    Rational& operator/=(const Rational rhs);
+    Rational& operator+=(const Rational a);
+    Rational& operator-=(const Rational a);
+    Rational& operator*=(const Rational a);
+    Rational& operator/=(const Rational a);
 
-    Rational& operator*=(const int num);
     Rational& operator+=(const int num);
     Rational& operator-=(const int num);
+    Rational& operator*=(const int num); 
     Rational& operator/=(const int num);
 
     std::ostream& writeTo(std::ostream& ostr) const;
