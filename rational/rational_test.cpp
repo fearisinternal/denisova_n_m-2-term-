@@ -5,7 +5,6 @@
 bool testParse(const std::string& str)
 {
     using namespace std;
-    istringstream istrm(str);
 }
 int main()
 {

@@ -20,21 +20,21 @@ struct Rational
         ch = chel / del; dr = drob / del;
     }
 
-    bool operator==(const Rational& a) const;
-    bool operator!=(const Rational& a) const;
+    bool operator==(const Rational& a);
+    bool operator!=(const Rational& a);
 
     Rational& operator+=(const Rational a);
     Rational& operator-=(const Rational a);
-    Rational& operator*=(const Rational a);
-    Rational& operator/=(const Rational a);
+    Rational& operator*=(const Rational a) ;
+    Rational& operator/=(const Rational a) ;
 
-    Rational& operator+=(const int num);
-    Rational& operator-=(const int num);
-    Rational& operator*=(const int num); 
-    Rational& operator/=(const int num);
+    Rational& operator+=(const int num) ;
+    Rational& operator-=(const int num) ;
+    Rational& operator*=(const int num) ;
+    Rational& operator/=(const int num) ;
 
-    std::ostream& writeTo(std::ostream& ostr) const;
-    std::istream& readFrom(std::istream& istr);
+    //std::ostream& writeTo(std::ostream& ostr) const;
+    //std::istream& readFrom(std::istream& istr);
 };
 
 #endif

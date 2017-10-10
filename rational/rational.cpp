@@ -18,10 +18,6 @@ bool Rational::operator!=(const Rational& rhs) const { return !operator==(rhs); 
 
 //операторы межды двумя рациональными
 
-Rational& Rational::operator*=(const Rational rhs) const {
-    return Rational((ch * rhs.ch), (dr * rhs.dr));
-}
-
 Rational& Rational::operator+=(const Rational rhs) const {
     int del = lcm(dr, rhs.dr);
     return Rational(ch*(del / dr) + rhs.ch*(del / rhs.dr), del);
@@ -30,6 +26,10 @@ Rational& Rational::operator+=(const Rational rhs) const {
 Rational& Rational::operator-=(const Rational& rhs) const {
     int del = lcm(dr, rhs.dr);
     return Rational(ch*(del / dr) - rhs.ch*(del / rhs.dr), del);
+}
+
+Rational& Rational::operator*=(const Rational rhs) const {
+    return Rational((ch * rhs.ch), (dr * rhs.dr));
 }
 
 Rational& Rational::operator/=(const Rational rhs) const {
