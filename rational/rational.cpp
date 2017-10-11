@@ -11,45 +11,69 @@ int lcm(int a, int b)
     return a*b / gcd(a, b);
 }
 
-//== и !=
+//== and !=
 
-bool Rational::operator==(const Rational& rhs) const { return (ch == rhs.ch) && (dr == rhs.dr); }
-bool Rational::operator!=(const Rational& rhs) const { return !operator==(rhs); }
+bool Rational::operator==(const Rational& rhs) { return (p == rhs.p) && (q == rhs.q); }
+bool Rational::operator!=(const Rational& rhs) { return !operator==(rhs); }
+
+//< and >
+
+bool Rational::operator > (const Rational& rhs) { 
+    int del = lcm(q, rhs.q);
+    return (p*(del/q) > rhs.p*(del/rhs.q)); 
+}
+
+bool Rational::operator < (const Rational& rhs) {
+    int del = lcm(q, rhs.q);
+    return (p*(del / q) < rhs.p*(del / rhs.q));
+}
 
 //операторы межды двумя рациональными
 
-Rational& Rational::operator+=(const Rational rhs) const {
-    int del = lcm(dr, rhs.dr);
-    return Rational(ch*(del / dr) + rhs.ch*(del / rhs.dr), del);
+Rational& Rational::operator+=(const Rational rhs) {
+    int del = lcm(q, rhs.q);
+    p = p*(del / q) + rhs.p*(del / rhs.q);
+    q = del;
+    return *this;
 }
 
-Rational& Rational::operator-=(const Rational& rhs) const {
-    int del = lcm(dr, rhs.dr);
-    return Rational(ch*(del / dr) - rhs.ch*(del / rhs.dr), del);
+Rational& Rational::operator-=(const Rational rhs) {
+    int del = lcm(q, rhs.q);
+    p = p*(del / q) - rhs.p*(del / rhs.q);
+    q = del;
+    return *this;
 }
 
-Rational& Rational::operator*=(const Rational rhs) const {
-    return Rational((ch * rhs.ch), (dr * rhs.dr));
+Rational& Rational::operator*=(const Rational rhs) {
+    p *= rhs.p;
+    q *= rhs.q;
+    int del = gcd(p, q);
+    p /= del; q /= del;
+    return *this;
 }
 
-Rational& Rational::operator/=(const Rational rhs) const {
-    return Rational((ch * rhs.dr), (dr * rhs.ch));
+Rational& Rational::operator/=(const Rational rhs) {
+    p *=rhs.q;
+    q *= rhs.p;
+    int del = gcd(p,q);
+    p /= del; q /= del;
+    return *this;
 }
 
 //операторы с числами
 
-Rational& Rational::operator+=(const int rhs) const {
-    return Rational(ch + rhs*dr, dr);
+Rational& Rational::operator+=(const int rhs) {
+    return Rational(p + rhs*q, q);
 }
 
-Rational& Rational::operator-=(const int rhs) const {
-    return Rational(ch - rhs*dr, dr);
+Rational& Rational::operator-=(const int rhs) {
+    return Rational(p - rhs*q, q);
 }
 
-Rational& Rational::operator*=(const int rhs) const {
-    return Rational(ch * rhs, dr);
+Rational& Rational::operator*=(const int rhs) {
+    return Rational(p * rhs, q);
 }
 
-Rational& Rational::operator/=(const int rhs) const {
-    return Rational(ch, dr * rhs);
+Rational& Rational::operator/=(const int rhs) {
+    return Rational(p, q * rhs);
 }

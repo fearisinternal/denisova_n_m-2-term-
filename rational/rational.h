@@ -8,33 +8,36 @@ int lcm(int a, int b);
 
 struct Rational
 {
-    int ch{ 0 };
-    int dr{ 0 };
+    int p{ 0 };
+    int q{ 1 };
 
     static const char separator{ '/' };
 
     Rational() {}
-    //explicit Rational(const double chel) {};
+    explicit Rational(const double chel) {};
     Rational(const int chel, const int drob) {
-        int del = gcd(chel, drob);
-        ch = chel / del; dr = drob / del;
+        if (drob > 0) {
+            int del = gcd(chel, drob);
+            p = chel / del; q = drob / del;
+        }
     }
 
     bool operator==(const Rational& a);
     bool operator!=(const Rational& a);
 
+    bool operator<(const Rational& a);
+    bool operator>(const Rational& a);
+
     Rational& operator+=(const Rational a);
     Rational& operator-=(const Rational a);
-    Rational& operator*=(const Rational a) ;
-    Rational& operator/=(const Rational a) ;
+    Rational& operator*=(const Rational a);
+    Rational& operator/=(const Rational a);
 
-    Rational& operator+=(const int num) ;
-    Rational& operator-=(const int num) ;
-    Rational& operator*=(const int num) ;
-    Rational& operator/=(const int num) ;
+    Rational& operator+=(const int num);
+    Rational& operator-=(const int num);
+    Rational& operator*=(const int num);
+    Rational& operator/=(const int num);
 
-    //std::ostream& writeTo(std::ostream& ostr) const;
-    //std::istream& readFrom(std::istream& istr);
 };
 
 #endif
