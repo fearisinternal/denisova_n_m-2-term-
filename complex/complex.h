@@ -13,8 +13,13 @@ struct Complex
     static const char rightBrace{ '}' };
 
     Complex() {}
-    explicit Complex(const double real);
-    Complex(const double real, const double imaginary);
+    explicit Complex(const double real)
+        : re(real)
+    {};
+    Complex(const double real, const double imaginary)
+        : re(real)
+        , im(imaginary)
+    {};
 
     bool operator==(const Complex& rhs);
     bool operator!=(const Complex& rhs);
