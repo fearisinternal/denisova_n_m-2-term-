@@ -24,6 +24,5 @@ int main()
     testParse("10/4");
     testParse("3.3/4");*/
 
-
     return 0;
 }

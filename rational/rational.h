@@ -13,8 +13,13 @@ struct Rational
 
     static const char separator{ '/' };
 
-    Rational() {}
-    explicit Rational(const double chel) {};
+    Rational() = default;
+    ~Rational() = default;
+    Rational& operator=(const Rational& rhs) = default;
+    explicit Rational(const double chel)
+        : p(chel)
+        , q(1)
+    {};
     Rational(const int chel, const int drob) {
         if (drob > 0) {
             int del = gcd(chel, drob);
