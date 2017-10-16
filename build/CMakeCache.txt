@@ -178,6 +178,12 @@ rational_BINARY_DIR:STATIC=D:/Programming/denisova_n_m/build/rational
 rational_SOURCE_DIR:STATIC=D:/Programming/denisova_n_m/rational
 
 //Value Computed by CMake
+vec3dT_BINARY_DIR:STATIC=D:/Programming/denisova_n_m/build/vec3dT
+
+//Value Computed by CMake
+vec3dT_SOURCE_DIR:STATIC=D:/Programming/denisova_n_m/vec3dT
+
+//Value Computed by CMake
 vec3d_BINARY_DIR:STATIC=D:/Programming/denisova_n_m/build/vec3d
 
 //Value Computed by CMake
@@ -262,7 +268,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RC_COMPILER
