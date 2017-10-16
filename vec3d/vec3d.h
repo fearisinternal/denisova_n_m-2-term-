@@ -15,7 +15,16 @@ public:
     Vec3d() = default;
     ~Vec3d() = default;
     Vec3d& operator=(const Vec3d& rhs) = default;
-
+    explicit Vec3d(const double a)
+        : x(a)
+        , y(0)
+        , z(0)
+    {};
+    explicit Vec3d(const double a, const double b)
+        : x(a)
+        , y(b)
+        , z(0)
+    {};
     Vec3d(const double a, const double b, const double c)
         : x(a)
         , y(b)
