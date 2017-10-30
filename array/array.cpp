@@ -1,28 +1,21 @@
-#include <iosfwd>
+#include "array.h"
 #include <iostream>
-class Array
-{
-private:
-    ptrdiff_t capacity_{ 0 };
-    ptrdiff_t size_ { 0 };
-    int* pdata_{ nullptr };
-    Array() = default;
-    ~Array() = default;
-    Array& operator=(const Array& rhs) = default;
-    
-    int& operator[](const ptrdiff_t i) {
-        if (i > size_) {
-            //не существует
-        }
-        else {
 
-        }
-
+void Array::add() {
+    if (size_ < capacity_) {
+        ++size_;
     }
+    else {
+        int* new_pdata = new int[capacity_ * 2];
+        for (int i = 0; i < size_; i++) {
+            *(new_pdata + i) = *(pdata_ + i);
+        }
+        std::swap(new_pdata, pdata_);
+        size_++;
+        capacity_ *= 2;
+    }
+}
 
-
-};
-
-int main() {
-    return 0;
+int Array::size() const { 
+    return size_; 
 }
