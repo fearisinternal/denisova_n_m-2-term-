@@ -12,7 +12,7 @@ private:
     static const char comma{ ',' };
 
 public:
-    Vec3d() = default;
+    Vec3d() {}
     ~Vec3d() = default;
     Vec3d& operator=(const Vec3d& rhs) = default;
     explicit Vec3d(const double a)
@@ -38,8 +38,6 @@ public:
     Vec3d& operator-=(const Vec3d& rhs);
     Vec3d& operator*= (const double ch);
     Vec3d& operator/= (const double ch);
-    double ck(Vec3d& a, Vec3d& b);
-    double vc(Vec3d& a, Vec3d& b);
 
 };
 
