@@ -13,7 +13,7 @@ struct Rational
 
     static const char separator{ '/' };
 
-    Rational() = default;
+    Rational() {}
     ~Rational() = default;
     Rational& operator=(const Rational& rhs) = default;
     explicit Rational(const double chel)
