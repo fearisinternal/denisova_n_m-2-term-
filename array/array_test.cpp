@@ -8,13 +8,13 @@ int main()
     a[1] = 2;
     a[2] = 5;
 
-   /* try {
+   try {
         a[3] = 10;
     }
     catch (length_error err) {
         cout << "Index is more than size" << endl;
     }
-    */
+
     try {
         a.remove(-1);
     }
