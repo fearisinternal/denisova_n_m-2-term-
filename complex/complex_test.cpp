@@ -1,10 +1,7 @@
 #include "complex.h"
 #include <sstream>
 #include <iostream>
-
-//bool testParse(const std::string& str)
-//std::ostream& writeTo(std::ostream& ostr) const;
-//std::istream& readFrom(std::istream& istr);
+#include <string>
 
 int main()
 {
