@@ -5,13 +5,8 @@
 
 class Array
 {
-private:
-    ptrdiff_t capacity_{ 0 };
-    ptrdiff_t size_{ 0 };
-    int* pdata_{ nullptr };
-
 public:
-    Array() = default;
+    explicit Array() = default;
     ~Array() = default;
     Array& operator=(const Array& rhs) = default;
     Array(const int i) {
@@ -22,10 +17,19 @@ public:
 
     void add();
     int& operator[](const ptrdiff_t i);
+    const int& operator[](const ptrdiff_t i) const;
+
     int size() const;
-    void resize(const int& a); 
-    void insert(const int& a, const int& i); // добавление элемента
-    void remote(const int& a, const int& i); // удаление элемента
+    void resize(const int& a);
+    void insert(const int& a, const int& i); 
+    void remove(const int& i); 
+
+
+private:
+    ptrdiff_t capacity_{ 0 };
+    ptrdiff_t size_{ 0 };
+    int* pdata_{ nullptr };
+
 };
 
 #endif                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
@@ -36,4 +40,3 @@ public:
 //throw 
 //try {} catch (const T& exp) {}
 //указатель - специальный тип данных, который хранит адрес объекта
-// sizeof (T)

@@ -16,51 +16,62 @@ void Array::add() {
     }
 }
 
-int Array::size() const { 
-    return size_; 
+int Array::size() const {
+    return size_;
 }
 
 void Array::resize(const int& a) {
-	if (a >= 0) {
-		size_ = a;
-		capacity_ = a * 2;
-	}
+    if (a >= 0) {
+        size_ = a;
+        capacity_ = a * 2;
+    }
 }
 
 void Array::insert(const int& a, const int& new_i) {
-	if (new_i > 0 && new_i < size_) {
-		if (size_ >= capacity_) {
-			capacity_ *= 2;
-		}
-		int* new_pdata = new int[capacity_];
-		for (int i = 0; i < new_i; i++) {
-			*(new_pdata + i) = *(pdata_ + i);
-		}
-		for (int i = size_; i > i - 1; i--) {
-			*(new_pdata + i) = *(pdata_ + i - 1);
-		}
-		*(new_pdata + new_i) = a;
-		size_++;
-		std::swap(new_pdata, pdata_);
-	}
+    if (new_i <0) throw "You can not insert an element with negative index";
+    if (new_i > size_) throw "You can not insert an element with index that is more than size of array";
+    if (new_i >= 0 && new_i <= size_) {
+        size_++;
+        if (size_ >= capacity_) {
+            capacity_ *= 2;
+        }
+        int* new_pdata = new int[capacity_];
+        for (int i = 0; i < new_i; i++) {
+            *(new_pdata + i) = *(pdata_ + i);
+        }
+        for (int i = size_; i > i - 1; i--) {
+            *(new_pdata + i) = *(pdata_ + i - 1);
+        }
+        *(new_pdata + new_i) = a;
+        size_++;
+        std::swap(new_pdata, pdata_);
+    }
 }
 
 int& Array::operator[](const ptrdiff_t i) {
-    if (i>=0 && i<size_) return pdata_[i];
-	else return  pdata_[0];//исключение?
+    if (i >= 0 && i<size_) return *(pdata_ + i);
+    throw "this index out of range";
 }
 
-void Array::remote(const int& a, const int& new_i) {
-	if (new_i > 0 && new_i < size_) {
-		int* new_pdata = new int[capacity_];
-		for (int i = 0; i < new_i; i++) {
-			*(new_pdata + i) = *(pdata_ + i);
-		}
-		for (int i = new_i; i < size_; i++) {
-			*(new_pdata + i-1) = *(pdata_ + i);
-		}
-		size_--;
-		std::swap(new_pdata, pdata_);
-	}
+const int & Array::operator[](const ptrdiff_t i) const
+{
+    if (i >= 0 && i<size_) return *(pdata_ + i);
+    throw "this index out of range";
+}
+
+void Array::remove(const int& new_i) {
+    if (new_i <0) throw "You can not remote an element with negative index";
+    if (new_i > size_) throw "You can not remote an element with index that is more than size of array";
+    if (new_i > 0 && new_i < size_) {
+        int* new_pdata = new int[capacity_];
+        for (int i = 0; i < new_i; i++) {
+            *(new_pdata + i) = *(pdata_ + i);
+        }
+        for (int i = new_i; i < size_; i++) {
+            *(new_pdata + i - 1) = *(pdata_ + i);
+        }
+        size_--;
+        std::swap(new_pdata, pdata_);
+    }
 }
 
