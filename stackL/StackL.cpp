@@ -6,7 +6,7 @@ StackL::StackL(const StackL & obj)
 
 StackL::~StackL()
 {
-	while (isEmpty) {
+	while (isEmpty()) {
 		pop();
 	}
 }
@@ -45,6 +45,6 @@ void StackL::clear()
 {
 	bool emptiness = isEmpty();
 	while (emptiness != true) {
-
+		delete pHead_;
 	}
 }
