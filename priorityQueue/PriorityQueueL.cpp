@@ -19,6 +19,7 @@ void PriorityQueueL::pop()
 
 int& PriorityQueueL::top()
 {
+    if (isEmpty()) { throw(("")); }
     return pHead_->data_;
 }
 
