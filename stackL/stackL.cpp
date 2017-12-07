@@ -18,8 +18,7 @@ void StackL::push(const int & element)
 
 void StackL::pop()
 {
-    bool emptiness = isEmpty();
-    if (emptiness == false) {
+    if (!isEmpty()) {
         Node* pDell(pHead_);
         pHead_ = pHead_->pNext_;
         delete pDell;
@@ -43,8 +42,7 @@ bool StackL::isEmpty() const
 
 void StackL::clear()
 {
-    bool emptiness = isEmpty();
-    while (emptiness != true) {
+    while (!isEmpty()) {
         delete pHead_;
     }
 }
