@@ -9,47 +9,46 @@ using namespace std;
 
 int main()
 {
-    PriorityQueueA test;
-    /*for (int i = 0; i < 10; i++)
-    {
-        test.insert(i);
-    }
+	PriorityQueueA test;
+	for (int i = 0; i < 10; i++)
+	{
+	test.insert(i);
+	}
+	
+	PriorityQueueA test2;
+	test2 = test;
 
-    PriorityQueueA test2;
-    test2 = test;
+	for (int i = 0; i < 5; i++)
+	{
+	test2.pop();
+	}
 
-    for (int i = 0; i < 5; i++)
-    {
-        test2.pop();
-    }
+	for (int i = 0; i < 4; i++)
+	{
+	test2.insert(i - 3);
+	}
+	test2.insert(15);
 
-    for (int i = 0; i < 4; i++)
-    {
-        test2.insert(i - 3);
-    }
-    test2.insert(15);
+	PriorityQueueA test3;
 
-    PriorityQueueA test3;
+	while (test.isEmpty())
+	{
+		cout << test.top() << " ";
+		test.pop();
+	}
+	cout << endl;
 
-    */
-    while (!test.isEmpty())
-    {
-        //cout << test.top() << " ";
-        //test.pop();
-    }
-    cout << endl;
+	while (!test2.isEmpty())
+	{
+	cout << test2.top() << " ";
+	test2.pop();
+	}
 
-    /*while (!test2.isEmpty())
-    {
-        cout << test2.top() << " ";
-        test2.pop();
-    }
+	while (!test3.isEmpty())
+	{
+	cout << test3.top() << " ";
+	test3.pop();
+	}
 
-    while (!test3.isEmpty())
-    {
-        cout << test3.top() << " ";
-        test3.pop();
-    }*/
-
-    return 0;
+	return 0;
 }
