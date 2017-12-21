@@ -4,7 +4,7 @@
 
 double eps = -1e-8;
 
-bool Complex::operator==(const Complex& rhs) { return (re - rhs.re < eps) && (im - rhs.im < eps); }
+bool Complex::operator==(const Complex& rhs) { return (abs(re - rhs.re < eps)) && (abs(im - rhs.im) < eps); }
 bool Complex::operator!=(const Complex& rhs) { return !operator==(rhs); }
 
 Complex& Complex::operator+=(const Complex& rhs) {
