@@ -1,2 +1,2 @@
-project(priorityQueueA)
-add_executable(priorityQueueA array.h array.cpp priorityQueueA.h priorityQueueA.cpp priorityQueueA_test.cpp)
+project(priorityqueuea)
+add_executable(priorityqueuea array.h array.cpp priorityqueuea.h priorityqueuea.cpp priorityqueuea_test.cpp)
