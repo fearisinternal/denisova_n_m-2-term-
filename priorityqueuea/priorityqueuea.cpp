@@ -1,4 +1,4 @@
-#include "PriorityQueueA.h"
+#include "priorityqueuea.h"
 #include "array.h"
 
 PriorityQueueA::~PriorityQueueA()
