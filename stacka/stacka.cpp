@@ -1,4 +1,4 @@
-#include "StackA.h"
+#include "stacka.h"
 #include "array.h"
 
 StackA::StackA(const StackA & obj)
