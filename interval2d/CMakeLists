@@ -1,2 +1,0 @@
-project(interval2d)
-add_executable(interval2d.cpp)
