@@ -44,13 +44,4 @@ struct Rational
     Rational& operator/=(const int num);
 
 };
-
-inline std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs) {
-    return rhs.writeTo(ostrm);
-}
-
-inline std::istream& operator >> (std::istream& istrm, Complex& rhs) {
-    return rhs.readFrom(istrm);
-}
-
 #endif
