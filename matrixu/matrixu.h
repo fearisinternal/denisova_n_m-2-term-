@@ -13,8 +13,8 @@ private:
 
 public:
     explicit MatrixU() = default;
-    //~MatrixU();
-    MatrixU(const int nRow, const int nCol);
+    ~MatrixU() = default;
+    MatrixU (const ptrdiff_t nRow, const ptrdiff_t nCol);
     ptrdiff_t getRowCount();
     ptrdiff_t getColCount();
 
@@ -28,4 +28,4 @@ public:
 
 }
 
-#endif;
+#endif

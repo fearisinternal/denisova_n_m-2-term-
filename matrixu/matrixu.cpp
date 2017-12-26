@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 
-MatrixU::MatrixU(const int nRow, const int nCol)
+MatrixU::MatrixU(const ptrdiff_t  nRow, const ptrdiff_t  nCol)
     : nRow_(nRow)
     , nCol_(nCol)
 {
@@ -78,8 +78,7 @@ void MatrixU::minusMonM(MatrixU matr1, MatrixU matr2)
 
 void MatrixU::multiplyMonN(MatrixU matr1, ptrdiff_t i)
 {
-    for (int j = 0; j < (matr1.nCol_*matr1.nRow_); j++) {
-        *(matr1.pRows_ + j) = i * *(matr1.pRows_ + j);
-    }
+	for (int j = 0; j < (matr1.nCol_*matr1.nRow_); j++) {
+		*(matr1.pRows_ + j) = i * *(matr1.pRows_ + j);
+	}
 }
-
